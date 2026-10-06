@@ -1,0 +1,66 @@
+# Cấu hình môi trường làm việc (đơn vị: mét, frame "world" = đế robot, mặt bàn z = 0).
+# Vị trí "initial" chỉ dùng cho bộ mô phỏng thế giới (world_sim) để đặt khối lúc khởi động.
+# Planner / validator / executor KHÔNG đọc các vị trí này: chúng chỉ dùng kết quả camera.
+frame: world
+block_size: 0.04
+
+table:
+  center: [0.15, 0.0, -0.022]    # mặt bàn ở z = -0.002 (hở 2 mm so với đế robot)
+  size: [0.80, 1.10, 0.04]
+
+objects:
+  red_cube:    {color: red,    initial: [0.18, 0.20]}
+  yellow_cube: {color: yellow, initial: [0.18, 0.07]}
+  blue_cube:   {color: blue,   initial: zone_b}      # zone_b bị chiếm sẵn -> demo tình huống bận
+  green_cube:  {color: green,  initial: [0.18, -0.07]}
+  purple_cube: {color: purple, initial: [0.18, -0.20]}
+
+zones:
+  zone_a: {center: [0.30, 0.15], size: 0.08}
+  zone_b: {center: [0.30, 0.00], size: 0.08}
+  zone_c: {center: [0.30, -0.15], size: 0.08}
+
+# Vùng tìm chỗ trống tạm thời (find_free_position)
+free_space:
+  x: [0.05, 0.38]
+  y: [-0.32, 0.32]
+  min_radius: 0.18
+  max_radius: 0.36
+  clearance: 0.10        # khoảng cách tối thiểu tới khối khác (đủ chỗ cho ngón kẹp mở)
+  zone_clearance: 0.10   # khoảng cách tối thiểu tới tâm zone (không lấn vào zone)
+  step: 0.02
+  prefer: [0.10, 0.25]   # ưu tiên chỗ gần điểm này
+
+grasp:
+  approach_height: 0.10  # độ cao tiếp cận phía trên khối
+  open_position: 0.04    # độ mở mỗi ngón khi mở
+  squeeze: 0.002         # kẹp sâu hơn mép khối 2 mm
+  release_gap: 0.002     # thả cách mặt đỡ 2 mm
+
+motion:
+  velocity_scaling: 0.3
+  acceleration_scaling: 0.3
+  planning_time: 5.0
+  planning_attempts: 3
+  cartesian_step: 0.005
+
+# Camera ảo nhìn thẳng xuống bàn
+camera:
+  frame_id: camera_optical_frame
+  position: [0.15, 0.0, 0.90]
+  width: 960
+  height: 720
+  fx: 750.0
+  fy: 750.0
+  rate: 5.0
+  noise_sigma: 2.0
+
+# Ngưỡng HSV (OpenCV: H 0-180) để tách màu
+perception:
+  min_area: 150
+  colors:
+    red:    [[[0, 120, 150], [8, 255, 255]], [[172, 120, 150], [180, 255, 255]]]
+    yellow: [[[20, 120, 150], [36, 255, 255]]]
+    green:  [[[50, 120, 120], [80, 255, 255]]]
+    blue:   [[[100, 120, 150], [125, 255, 255]]]
+    purple: [[[135, 100, 120], [160, 255, 255]]]

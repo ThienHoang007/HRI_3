@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: ur3-llm-control
+Version: 0.1.0
+Summary: Điều khiển UR3 + gripper bằng ngôn ngữ tự nhiên qua LLM (MoveIt 2 + RViz).
+Home-page: UNKNOWN
+Maintainer: thienhoang
+Maintainer-email: thienhoang@example.com
+License: Apache-2.0
+Platform: UNKNOWN
+
+UNKNOWN
+

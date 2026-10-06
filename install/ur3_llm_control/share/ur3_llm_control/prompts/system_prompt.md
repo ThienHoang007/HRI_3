@@ -1,0 +1,1 @@
+/home/thienhoang/Documents/HRI/4/ur3_llm_ws/build/ur3_llm_control/prompts/system_prompt.md

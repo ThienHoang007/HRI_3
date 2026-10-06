@@ -1,0 +1,42 @@
+[1.374s] Invoking command in '/home/thienhoang/Documents/HRI/4/ur3_llm_ws/build/ur3_llm_control': PYTHONPATH=/home/thienhoang/Documents/HRI/4/ur3_llm_ws/build/ur3_llm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/thienhoang/Documents/HRI/4/ur3_llm_ws/install/ur3_llm_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/thienhoang/Documents/HRI/4/ur3_llm_ws/build/ur3_llm_control/build --no-deps symlink_data
+[1.706s] running develop
+[1.917s] running egg_info
+[1.917s] creating ur3_llm_control.egg-info
+[1.919s] writing ur3_llm_control.egg-info/PKG-INFO
+[1.919s] writing dependency_links to ur3_llm_control.egg-info/dependency_links.txt
+[1.919s] writing entry points to ur3_llm_control.egg-info/entry_points.txt
+[1.920s] writing requirements to ur3_llm_control.egg-info/requires.txt
+[1.920s] writing top-level names to ur3_llm_control.egg-info/top_level.txt
+[1.920s] writing manifest file 'ur3_llm_control.egg-info/SOURCES.txt'
+[1.922s] reading manifest file 'ur3_llm_control.egg-info/SOURCES.txt'
+[1.923s] writing manifest file 'ur3_llm_control.egg-info/SOURCES.txt'
+[1.926s] running build_ext
+[1.926s] Creating /home/thienhoang/Documents/HRI/4/ur3_llm_ws/install/ur3_llm_control/lib/python3.10/site-packages/ur3-llm-control.egg-link (link to .)
+[1.927s] Installing llm_commander script to /home/thienhoang/Documents/HRI/4/ur3_llm_ws/install/ur3_llm_control/lib/ur3_llm_control
+[1.928s] Installing perception script to /home/thienhoang/Documents/HRI/4/ur3_llm_ws/install/ur3_llm_control/lib/ur3_llm_control
+[1.928s] Installing world_sim script to /home/thienhoang/Documents/HRI/4/ur3_llm_ws/install/ur3_llm_control/lib/ur3_llm_control
+[1.929s] 
+[1.929s] Installed /home/thienhoang/Documents/HRI/4/ur3_llm_ws/build/ur3_llm_control
+[1.929s] running symlink_data
+[1.932s] creating /home/thienhoang/Documents/HRI/4/ur3_llm_ws/install/ur3_llm_control/share/ament_index
+[1.932s] creating /home/thienhoang/Documents/HRI/4/ur3_llm_ws/install/ur3_llm_control/share/ament_index/resource_index
+[1.933s] creating /home/thienhoang/Documents/HRI/4/ur3_llm_ws/install/ur3_llm_control/share/ament_index/resource_index/packages
+[1.933s] symbolically linking /home/thienhoang/Documents/HRI/4/ur3_llm_ws/build/ur3_llm_control/resource/ur3_llm_control -> /home/thienhoang/Documents/HRI/4/ur3_llm_ws/install/ur3_llm_control/share/ament_index/resource_index/packages
+[1.934s] symbolically linking /home/thienhoang/Documents/HRI/4/ur3_llm_ws/build/ur3_llm_control/package.xml -> /home/thienhoang/Documents/HRI/4/ur3_llm_ws/install/ur3_llm_control/share/ur3_llm_control
+[1.934s] creating /home/thienhoang/Documents/HRI/4/ur3_llm_ws/install/ur3_llm_control/share/ur3_llm_control/launch
+[1.934s] symbolically linking /home/thienhoang/Documents/HRI/4/ur3_llm_ws/build/ur3_llm_control/launch/llm_robot.launch.py -> /home/thienhoang/Documents/HRI/4/ur3_llm_ws/install/ur3_llm_control/share/ur3_llm_control/launch
+[1.935s] creating /home/thienhoang/Documents/HRI/4/ur3_llm_ws/install/ur3_llm_control/share/ur3_llm_control/config
+[1.935s] symbolically linking /home/thienhoang/Documents/HRI/4/ur3_llm_ws/build/ur3_llm_control/config/moveit_controllers.yaml -> /home/thienhoang/Documents/HRI/4/ur3_llm_ws/install/ur3_llm_control/share/ur3_llm_control/config
+[1.939s] symbolically linking /home/thienhoang/Documents/HRI/4/ur3_llm_ws/build/ur3_llm_control/config/ros2_controllers.yaml -> /home/thienhoang/Documents/HRI/4/ur3_llm_ws/install/ur3_llm_control/share/ur3_llm_control/config
+[1.939s] symbolically linking /home/thienhoang/Documents/HRI/4/ur3_llm_ws/build/ur3_llm_control/config/moveit.rviz -> /home/thienhoang/Documents/HRI/4/ur3_llm_ws/install/ur3_llm_control/share/ur3_llm_control/config
+[1.939s] symbolically linking /home/thienhoang/Documents/HRI/4/ur3_llm_ws/build/ur3_llm_control/config/joint_limits.yaml -> /home/thienhoang/Documents/HRI/4/ur3_llm_ws/install/ur3_llm_control/share/ur3_llm_control/config
+[1.939s] symbolically linking /home/thienhoang/Documents/HRI/4/ur3_llm_ws/build/ur3_llm_control/config/ur3_gripper.srdf -> /home/thienhoang/Documents/HRI/4/ur3_llm_ws/install/ur3_llm_control/share/ur3_llm_control/config
+[1.939s] symbolically linking /home/thienhoang/Documents/HRI/4/ur3_llm_ws/build/ur3_llm_control/config/scene.yaml -> /home/thienhoang/Documents/HRI/4/ur3_llm_ws/install/ur3_llm_control/share/ur3_llm_control/config
+[1.939s] symbolically linking /home/thienhoang/Documents/HRI/4/ur3_llm_ws/build/ur3_llm_control/config/student_config.yaml -> /home/thienhoang/Documents/HRI/4/ur3_llm_ws/install/ur3_llm_control/share/ur3_llm_control/config
+[1.940s] symbolically linking /home/thienhoang/Documents/HRI/4/ur3_llm_ws/build/ur3_llm_control/config/kinematics.yaml -> /home/thienhoang/Documents/HRI/4/ur3_llm_ws/install/ur3_llm_control/share/ur3_llm_control/config
+[1.940s] creating /home/thienhoang/Documents/HRI/4/ur3_llm_ws/install/ur3_llm_control/share/ur3_llm_control/urdf
+[1.940s] symbolically linking /home/thienhoang/Documents/HRI/4/ur3_llm_ws/build/ur3_llm_control/urdf/gripper.xacro -> /home/thienhoang/Documents/HRI/4/ur3_llm_ws/install/ur3_llm_control/share/ur3_llm_control/urdf
+[1.940s] symbolically linking /home/thienhoang/Documents/HRI/4/ur3_llm_ws/build/ur3_llm_control/urdf/ur3_gripper.urdf.xacro -> /home/thienhoang/Documents/HRI/4/ur3_llm_ws/install/ur3_llm_control/share/ur3_llm_control/urdf
+[1.940s] creating /home/thienhoang/Documents/HRI/4/ur3_llm_ws/install/ur3_llm_control/share/ur3_llm_control/prompts
+[1.940s] symbolically linking /home/thienhoang/Documents/HRI/4/ur3_llm_ws/build/ur3_llm_control/prompts/system_prompt.md -> /home/thienhoang/Documents/HRI/4/ur3_llm_ws/install/ur3_llm_control/share/ur3_llm_control/prompts
+[1.998s] Invoked command in '/home/thienhoang/Documents/HRI/4/ur3_llm_ws/build/ur3_llm_control' returned '0': PYTHONPATH=/home/thienhoang/Documents/HRI/4/ur3_llm_ws/build/ur3_llm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/thienhoang/Documents/HRI/4/ur3_llm_ws/install/ur3_llm_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/thienhoang/Documents/HRI/4/ur3_llm_ws/build/ur3_llm_control/build --no-deps symlink_data

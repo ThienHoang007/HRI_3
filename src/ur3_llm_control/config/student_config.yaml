@@ -1,0 +1,4 @@
+# Sửa 2 dòng dưới thành thông tin của bạn.
+# P = (2 chữ số cuối của MSSV) mod 6 quyết định màu của từng zone.
+student_name: "Nguyen Hoang Thien"
+student_id: "23020774"

@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!-- UR3 + gripper 2 ngón + bàn, chạy với mock_components/GenericSystem (fake hardware). -->
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="ur3_gripper">
+  <xacro:arg name="ur_type" default="ur3"/>
+  <xacro:property name="ur_type" value="$(arg ur_type)"/>
+
+  <xacro:include filename="$(find ur_description)/urdf/ur_macro.xacro"/>
+  <xacro:include filename="$(find ur3_llm_control)/urdf/gripper.xacro"/>
+
+  <link name="world"/>
+
+  <!-- Mặt bàn được thêm vào planning scene bởi llm_commander (vật cản thế giới). -->
+
+  <xacro:ur_robot
+    name="ur"
+    tf_prefix=""
+    parent="world"
+    ur_type="${ur_type}"
+    joint_limits_parameters_file="$(find ur_description)/config/${ur_type}/joint_limits.yaml"
+    kinematics_parameters_file="$(find ur_description)/config/${ur_type}/default_kinematics.yaml"
+    physical_parameters_file="$(find ur_description)/config/${ur_type}/physical_parameters.yaml"
+    visual_parameters_file="$(find ur_description)/config/${ur_type}/visual_parameters.yaml"
+    generate_ros2_control_tag="false">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:ur_robot>
+
+  <xacro:simple_gripper parent="tool0"/>
+
+  <!-- ros2_control: 6 khớp tay + 1 khớp gripper trên fake hardware.
+       initial_value = tư thế "ready" (gripper hướng xuống bàn). -->
+  <xacro:macro name="arm_joint" params="name initial">
+    <joint name="${name}">
+      <command_interface name="position"/>
+      <state_interface name="position"><param name="initial_value">${initial}</param></state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+  </xacro:macro>
+
+  <ros2_control name="FakeSystem" type="system">
+    <hardware>
+      <plugin>mock_components/GenericSystem</plugin>
+      <param name="state_following_offset">0.0</param>
+    </hardware>
+    <xacro:arm_joint name="shoulder_pan_joint" initial="0.0"/>
+    <xacro:arm_joint name="shoulder_lift_joint" initial="-1.5708"/>
+    <xacro:arm_joint name="elbow_joint" initial="1.5708"/>
+    <xacro:arm_joint name="wrist_1_joint" initial="-1.5708"/>
+    <xacro:arm_joint name="wrist_2_joint" initial="-1.5708"/>
+    <xacro:arm_joint name="wrist_3_joint" initial="0.0"/>
+    <xacro:arm_joint name="finger_joint" initial="0.04"/>
+    <!-- Ngón phải: mock hardware tự sao chép giá trị từ finger_joint -->
+    <joint name="finger_right_joint">
+      <param name="mimic">finger_joint</param>
+      <param name="multiplier">1</param>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+  </ros2_control>
+</robot>

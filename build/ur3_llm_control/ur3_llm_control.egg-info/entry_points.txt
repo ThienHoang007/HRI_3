@@ -1,0 +1,5 @@
+[console_scripts]
+llm_commander = ur3_llm_control.commander_node:main
+perception = ur3_llm_control.perception_node:main
+world_sim = ur3_llm_control.world_sim:main
+
